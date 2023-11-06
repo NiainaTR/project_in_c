@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .formulaire{
+            width: 100%;
+            height: 900px;
+            background-color: crimson;
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .box{
+            width: 50%;
+            height: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .foot{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            box-shadow: 0 -10px 10px black;
+        }
+
+    </style>
+<body>
+    <h1 style="text-align: center; color: black;">Mention Informatique et technologie</h1>
+    <h2 style="text-align: center; color: red;">INSCRIPTION</h1>
+    <form action="validate.c" method="post">
+        <div class="formulaire">
+            <div class="box">
+                <h4>Nom</h4>
+                <input type="text" name="nom">
+            </div >
+            <div class="box">
+                <h4>Prenom</h4>
+                <input type="text" name="prenom">
+            </div>
+            <div class="box">
+                <h4>Date de naissance</h4>
+                <input type="text" name="naissance">
+            </div>
+            <div class="box">
+                <h4>Lieu de naissance</h4>
+                <input type="text" name="lieu">
+            </div>
+            <div class="box">
+                <h4>Adresse</h4>
+                <input type="text" name="adresse">
+            </div>
+            <div class="box">
+                <h4>Contact</h4>
+                <input type="text" name="contact">
+            </div>
+            <div class="box">
+                <h4>Sexe</h4>
+                <select name="sexe">
+                    <option value="H">Homme</option>
+                    <option value="F">Femme</option>
+                </select>    
+            </div>
+            <div class="box">
+                <h4>Numero d'inscription</h4>
+                <input type="text" name="numero">
+            </div>
+            <div class="box">
+                <h4>Serie</h4>
+                <select name="serie">
+                    <option value="C">serie C</option>
+                    <option value="S">serie S</option>
+                </select>    
+            </div>
+            <div class="box">
+                <h4>Mention</h4>
+                <select name="mention">
+                    <option value="TB">Très bien</option>
+                    <option value="B">Bien</option>
+                    <option value="AB">Assez bien</option>
+                    <option value="P">Passable</option>
+                </select>    
+            </div>
+            <div class="box">
+                <h4>Année d'obtention</h4>
+                <select name="annee">
+                    <option value="annee1">2022</option>
+                    <option value="annee2">2023</option>
+                </select>  
+            </div>
+            <input type="submit">
+        </div>
+    </form>
+    <div class="foot">
+        <div class="boite">
+            <img src="./icons/bxs-phone.svg" alt="">  
+        </div>
+        <div class="boite">
+            <h5></h5>
+            <img src="./icons/bxl-facebook-circle.svg" alt="">  
+        </div>
+    </div>
+</body>
+</html>
