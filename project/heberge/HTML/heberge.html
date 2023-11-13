@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+        body{
+            min-height: 200vh;
+            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+        }
+        nav{
+            z-index: 100;
+        }
+        .box-container{
+            width: 80%;
+            margin-top: 40px;
+            margin-left: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 2px black;
+        }
+        .config{
+            width: 100%;
+            height: 300px;
+        }
+        hr{
+          margin-top: 10px;
+        }
+        .btnDel{
+            margin-bottom: 10px;
+            background-color: rgb(132, 32, 52);
+        }
+        .btnDel:hover{
+            margin-bottom: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <img src="pngwing.com.png" alt="" srcset="" width="10%">
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./enable_site.html">Activate / Desactivate</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./stats.html">Stats</a>
+              </li>       
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <div class="box-container">
+        <form action="http://www.heberge.com/cgi-bin/heberge/formulaire.cgi" method="get">
+            <div>
+              <label class="form-label">Server Name</label>
+              <input type="text" class="form-control" name="servername" required>
+            </div>  
+            <div>
+                <label class="form-label">Document Root</label>
+                <input type="text" class="form-control" name="DocumentRoot" required>
+            </div>
+            <div class="configuration">
+                <hr>
+                <p>Configuration</p>
+                <div>
+                  <label class="form-label">Directory</label>
+                  <input type="text" class="form-control" name="Directory1" required>
+                </div>
+                <div>
+                  <label class="form-label">ScriptAlias</label>
+                  <input type="text" class="form-control" name="Scriptalias1" required>
+                </div>
+                <div class="config" style="margin-top: 20px;">
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1" name="index1">
+                      <label class="form-check-label" for="exampleCheck1">Indexes</label>
+                  </div>
+                  <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1" name="follow1">
+                      <label class="form-check-label" for="exampleCheck1">FollowSymLinks</label>
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="exec1">
+                    <label class="form-check-label" for="exampleCheck1">ExecCgi</label>
+                  </div>
+                  <label class="form-check-label" for="exampleCheck1">AddHandler</label>
+                  <select class="form-select" aria-label="Default select example" name="add1">
+                    <option value="cgi1">.cgi</option>
+                    <option value="pl1">.pl</option>
+                    <option value="py1">.py</option>                    
+                  </select>
+                  <label class="form-check-label" for="exampleCheck1">AllowOverride</label>
+                  <select class="form-select" aria-label="Default select example" name="allow1">
+                    <option value="all1">All</option>
+                    <option value="none1">None</option>
+                  </select>
+                </div>  
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" style="margin-top: 20px;" id="add">Add other configuration</button>            
+            </div>
+            <input type="hidden" id="hiddenInputNbr" name="directory_number">
+            <input type="hidden" id="hiddenInputTab" name="tab_index">
+            <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 50%; background-color: rgb(23, 211, 23);" id="createbtn">Create</button>
+        </form>
+    </div>
+
+    
+    <script src="app.js"></script>
+    </body>
+</html>
