@@ -10,16 +10,13 @@ int main(){
 
     char *url = getenv("QUERY_STRING");
     
-    
-    printf("Content-Type:text/html\n\n");
-
+  
     char *servername = malloc(100);
 
     int nbr = 0;
 
     VirtualHost virtual = split_url(url , servername , &nbr);
-    
-    
+   
     char* path = calloc(200,sizeof(char));
 		
 	sprintf(path,"/etc/apache2/sites-available/%s.conf", servername);
@@ -54,7 +51,6 @@ int main(){
 	fprintf(file,"		Require all granted\n");
 	fprintf(file,"	</Directory>\n\n");
 
-
     for(int i = 0 ; i < nbr ; i++){
         fprintf(file,"	<Directory %s>\n", virtual.secondaire[i].directory);
         fprintf(file,"		%s\n",virtual.secondaire[i].Options);
@@ -63,9 +59,15 @@ int main(){
         fprintf(file,"		Require all granted\n");
         fprintf(file,"	</Directory>\n\n");
     }
-
-
+    
+        
+    fprintf(file,"ErrorLog ${APACHE_LOG_DIR}/%s.error.log\n" , servername);
+    fprintf(file,"CustomLog ${APACHE_LOG_DIR}/%s.access.log combined\n" , servername);
+    
+    
     fprintf(file,"</VirtualHost>\n");
+    
+    printf("Location:http://www.configure.com\n\n");
        
     return 0;
 }

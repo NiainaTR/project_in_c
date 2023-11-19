@@ -56,8 +56,6 @@ void find_sites_availables(){
     
    const char *chemin_dossier = "/etc/apache2/sites-available";
 
-
-   
     DIR *dossier = opendir(chemin_dossier);
 
     if (dossier == NULL) {
@@ -69,7 +67,7 @@ void find_sites_availables(){
     FILE *fichier_write = fopen("sites" , "w");
                 
         
- 
+    
     struct dirent *entree;
 
     while ((entree = readdir(dossier)) != NULL) {
@@ -107,7 +105,7 @@ void find_sites_availables(){
 
 }
 
-
+/*
 int *get_info(char *search)
 { // retourne ['bool' , 'linetotal'];
 
@@ -320,5 +318,5 @@ void affiche_connected(char *search , int page, char *id , int line_per_page){
 
 }
 
-
+*/
 
